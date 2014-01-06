@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<head>
+     
+<title>Lindsay Hoyt's Calculator</title>
+	
+  <script type="text/javascript">
+
+		
+function validateName()
+		
+{
+			
+var name = document.getElementById("full");
+
+	
+	
+if (name.value == null || name.value == "")
+	
+{
+		
+		
+window.alert("There was an error in the name field");
+	
+}
+
+			
+else if(name.value.length > 10)
+			
+{
+				
+window.alert("Name is to long.");
+				
+document.getElementById("full"). value = "";
+			
+}
+
+			
+else
+			
+{
+				
+window.alert("The name field is good: " + name.value);
+			
+}
+		
+}
+		
+		
+function validateNum()
+		
+{
+			
+var number = document.getElementById("num1");
+			
+var number = document.getElementById("num2");
+		
+if (isNaN(number.value))
+			
+{
+				
+window.alert("Must be a number.");
+			
+}
+
+			
+else
+			
+{
+				
+window.alert("Correct there are no errors.");
+			
+}
+		
+}
+	
+		
+function clearIt()
+		
+{
+				
+document.getElementById("full"). value = "";
+				
+document.getElementById("num1"). value = "";
+				
+document.getElementById("num2"). value = "";
+				
+document.getElementById("answer"). value = "";
+		
+}
+		
+		
+function addIt()
+		
+{
+				
+var theNum1 = document.getElementById("num1");
+				
+var theNum2 = document.getElementById("num2");
+				
+theResult = theNum1.value + theNum2.value;
+				
+document.getElementById("answer").value = theResult;
+
+		
+}
+
+		
+function multiplyIt()
+		
+{
+				
+var theNum1 = document.getElementById("num1");
+				
+var theNum2 = document.getElementById("num2");
+				
+theResult = theNum1.value * theNum2.value;
+				
+document.getElementById("answer").value = theResult;
+
+		
+}
+		
+		
+function subtractIt()
+		
+{
+				
+var theNum1 = document.getElementById("num1");
+				
+var theNum2 = document.getElementById("num2");
+				
+theResult = theNum1.value - theNum2.value;
+		
+document.getElementById("answer").value = theResult;
+
+	
+}
+
+		
+function divideIt()
+	
+{
+
+				
+var theNum1 = document.getElementById("num1");
+				
+var theNum2 = document.getElementById("num2");
+				
+theResult = theNum1.value / theNum2.value;
+				
+document.getElementById("answer").value = theResult;
+
+		
+}
+
+
+/*
+assignment six
+
+		
+function addIt ()
+		
+{
+			
+get number1
+			
+get number2
+			
+add them to get result
+			
+display result in the answer field
+		
+}
+
+
+use this in buttons:
+onClick="addIt();"
+
+
+
+use this in feilds:
+onChange="validateName();"
+
+*/
+
+	
+</script>  
+
+</head>
+
+<body>
+   
+<fieldset>
+   	
+<legend>Lindsay's Calculator</legend>
+     
+<form method="post">
+         
+<p>Enter your first name:
+            
+<input type="text" id="full" onChange="validateName();" />
+         
+</p>
+
+         
+<p>Enter the first number:
+            
+<input type="text" id="num1" onChange="validateNum();" />
+         
+</p>
+         
+         
+<p>Enter the second number:
+            
+<input type="text" id="num2" onChange="validateNum();" />
+         
+</p>
+
+         
+<p>The answer is:
+            
+<input type="text" id="answer" />
+         
+</p>
+
+         
+<p>
+            
+<input type="button" value="Add" onClick="addIt();"/>
+	        
+<input type="button" value="Multiply" onClick="multiplyIt();"/>
+            
+<input type="button" value="Subtract" onClick="subtractIt();"/>
+            
+<input type="button" value="Divide" onClick="divideIt();"/>
+            
+<input type="button" value="Clear All" onClick="clearIt();"/>
+
+         
+</p>
+     
+</form>
+   
+</fieldset>
+
+  
+</body>
+
+
+</html>
+
